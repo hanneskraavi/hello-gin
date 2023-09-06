@@ -57,7 +57,7 @@ metadata:
     external-dns.alpha.kubernetes.io/target: traefik.codemowers.ee
 spec:
   rules:
-  - host: hello-foobar.codemowers.ee
+  - host: hello-hkraav.codemowers.ee
     http:
       paths:
       - pathType: Prefix

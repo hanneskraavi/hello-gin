@@ -18,7 +18,7 @@ spec:
         - name: imgcred
       containers:
         - name: hello-gin
-          image: hello-gin
+          image: harbor.codemowers.eu/hkraav/hanneskraavi/hello-gin@sha256:2089e6a83cdcad05766fc4a636c3c7f26a5d2182123e4b3c13fecf8a9585a192
           env:
             - name: USERNAME
               value: world

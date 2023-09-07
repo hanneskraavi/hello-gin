@@ -9,7 +9,7 @@ metadata:
     external-dns.alpha.kubernetes.io/target: traefik.codemowers.ee
 spec:
   rules:
-  - host: {{ .Values.Username }}.codemowers.ee
+  - host: {{ .Values.username }}.codemowers.ee
     http:
       paths:
       - pathType: Prefix

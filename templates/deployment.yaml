@@ -20,7 +20,7 @@ spec:
           image: harbor.codemowers.eu/hkraav/hanneskraavi/hello-gin:latest
           env:
             - name: USERNAME
-              value: {{ .Values.Username }}
+              value: {{ .Values.username }}
             - name: MY_POD_NAME
               valueFrom:
                 fieldRef:

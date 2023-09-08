@@ -20,6 +20,13 @@ spec:
       containers:
         - name: hello-gin
           image: harbor.codemowers.eu/hkraav/hanneskraavi/hello-gin:latest
+          resources:
+            requests:      # Kube scheduleri jaoks, need peaks olema miinimumid
+              cpu: 2m      # rate(container_cpu_usage_seconds_total{container="hello-gin"}[1m])
+              memory: 15Mi # container_memory_usage_bytes{container="hello-gin"}
+            limits:
+              cpu: 200m      # CPU throttling
+              memory: 100Mi
           env:
             - name: USERNAME
               value: {{ .Values.username }}
@@ -32,10 +39,4 @@ spec:
               name: http
             - containerPort: 8080
               name: metrics
-      resources:
-        requests:      # Kube scheduleri jaoks, need peaks olema miinimumid
-          cpu: 2m      # rate(container_cpu_usage_seconds_total{container="hello-gin"}[1m])
-          memory: 15Mi # container_memory_usage_bytes{container="hello-gin"}
-        limits:
-          cpu: 200m      # CPU throttling
-          memory: 100Mi
+

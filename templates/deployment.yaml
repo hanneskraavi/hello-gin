@@ -16,8 +16,6 @@ spec:
         fsGroup: 1000
         runAsUser: 1000
         enableServiceLinks: false
-        imagePullSecrets:
-        - name: imgcred
       containers:
         - name: hello-gin
           image: harbor.codemowers.eu/hkraav/hanneskraavi/hello-gin:latest

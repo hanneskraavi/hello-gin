@@ -15,13 +15,14 @@ spec:
       securityContext:
         fsGroup: 1000
         runAsUser: 1000
-        readOnlyRootFilesystem: true
         enableServiceLinks: false
         imagePullSecrets:
         - name: imgcred
       containers:
         - name: hello-gin
           image: harbor.codemowers.eu/hkraav/hanneskraavi/hello-gin:latest
+          securityContext:
+            readOnlyRootFilesystem: true
           env:
             - name: USERNAME
               value: {{ .Values.username }}
